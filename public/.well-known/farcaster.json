@@ -1,0 +1,20 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "Chain Pulse",
+    "subtitle": "Onchain activity tracker",
+    "description": "Visualize your Base and Ethereum transaction history.",
+    "homeUrl": "http://localhost:3000",
+    "iconUrl": "http://localhost:3000/icon.png",
+    "splashImageUrl": "http://localhost:3000/splash.png",
+    "splashBackgroundColor": "#0A0B0D",
+    "primaryCategory": "finance",
+    "tags": ["analytics", "base", "ethereum", "transactions"],
+    "noindex": true
+  }
+}

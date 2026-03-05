@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #0A0B0D;
+  --color-foreground: #F9FAFB;
+  --color-base-blue: #0052FF;
+  --color-surface: #111318;
+  --color-surface-2: #1C1F28;
+  --color-border: #1E2130;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: #0A0B0D;
+  color: #F9FAFB;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide scrollbars while keeping scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* BLE send log — flash animation when new entry arrives */
+@keyframes ble-flash-out {
+  0%   { background: rgba(239,68,68,0.25); }
+  100% { background: transparent; }
+}
+@keyframes ble-flash-in {
+  0%   { background: rgba(34,197,94,0.25); }
+  100% { background: transparent; }
+}
+@keyframes ble-flash-self {
+  0%   { background: rgba(234,179,8,0.25); }
+  100% { background: transparent; }
+}
+@keyframes arrow-out {
+  0%   { transform: translateX(0);   opacity: 1; }
+  100% { transform: translateX(6px); opacity: 0.4; }
+}
+@keyframes arrow-in {
+  0%   { transform: translateX(0);    opacity: 1; }
+  100% { transform: translateX(-6px); opacity: 0.4; }
+}
+@keyframes spin-once {
+  0%   { transform: rotate(0deg);   }
+  100% { transform: rotate(360deg); }
+}
+.ble-new-out  { animation: ble-flash-out  0.8s ease-out both; }
+.ble-new-in   { animation: ble-flash-in   0.8s ease-out both; }
+.ble-new-self { animation: ble-flash-self 0.8s ease-out both; }
+.arrow-out    { display: inline-block; animation: arrow-out  0.5s ease-in-out infinite alternate; }
+.arrow-in     { display: inline-block; animation: arrow-in   0.5s ease-in-out infinite alternate; }
+.spin-once    { display: inline-block; animation: spin-once  1.2s linear; }
+
+/* OnchainKit dark theme overrides */
+:root {
+  --ock-font-family: var(--font-geist-sans);
+  --ock-border-radius: 12px;
+  --ock-border-radius-inner: 8px;
+}
